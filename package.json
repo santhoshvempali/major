@@ -10,20 +10,21 @@
   "keywords": [
     "social"
   ],
-  "author": "CodingNinjas",
+  "author": "Santhosh",
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
-    "mongoose": "^5.4.6"
+    "mongoose": "^5.4.6",
+    "nodemon": "^2.0.15"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/santhoshvempali/majorproject.git"
+    "url": "git+https://github.com/santhoshvempali/major.git"
   },
   "bugs": {
-    "url": "https://github.com/santhoshvempali/majorproject/issues"
+    "url": "https://github.com/santhoshvempali/major/issues"
   },
-  "homepage": "https://github.com/santhoshvempali/majorproject#readme"
+  "homepage": "https://github.com/santhoshvempali/major#readme"
 }
