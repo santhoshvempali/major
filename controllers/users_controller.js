@@ -1,27 +1,26 @@
 const User = require("../models/user");
-module.exports.profile = function (req, res) {
-    if(req.cookies.user_id){
-        User.findById(req.cookies.user_id,function(err,user){
-            if(user){
-                return res.render('user_profile',{
-                    title: " User profile",
-                    user: user
-                })
-            }
-        })
-    }
-    else{
-        return res.redirect('/users/sign-in')
-    }
-};
+
+module.exports.profile = function(req, res){
+  return res.render('user_profile', {
+      title: 'User Profile'
+  })
+}
+
+
 
 module.exports.signUp = function (req, res) {
+  if(req.isAuthenticated()){
+   return res.redirect("/users/profile")
+  }
   res.render("user_sign_up", {
     title: "app | Sign up",
   });
 };
 
 module.exports.signIn = function (req, res) {
+  if(req.isAuthenticated()){
+   return res.redirect("/users/profile")
+  }
   res.render("user_sign_in", {
     title: "app |signIn",
   });
@@ -54,25 +53,11 @@ module.exports.create = function (req, res) {
 };
 // create signin session
 module.exports.createSession = function (req, res) {
-    console.log(req)
-   User.findOne({email: req.body.email},function(err,user){
-       //checking user is present
-       if(err){
-           console.log("User not found"); return
-       }
-       //checking password with req and db
-       if(user){
-           if(req.body.password!==user.password){
-               res.redirect('back');
-           }
-
-           res.cookie("user_id",user.id);
-           return res.redirect('/users/profile')
-
-       }
-       else{
-           return res.redirect('back');
-       }
-
-   }) 
+  return res.redirect("/");
 };
+
+module.exports.destroySession = function(req, res){
+  req.logout();
+
+  return res.redirect('/');
+}
