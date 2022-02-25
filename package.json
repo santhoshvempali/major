@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local": "jest --coverage test.spec.js"
   },
   "keywords": [
     "social"
@@ -16,10 +17,14 @@
     "connect-mongo": "^4.6.0",
     "cookie-parser": "^1.4.6",
     "ejs": "^2.6.1",
+    "enzyme": "^3.11.0",
     "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.17.2",
+    "jest": "^27.5.1",
+    "mongodb": "^4.4.0",
     "mongoose": "^5.4.6",
+    "node-sass-middleware": "^1.0.1",
     "nodemon": "^2.0.15",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0"
@@ -31,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/santhoshvempali/major/issues"
   },
-  "homepage": "https://github.com/santhoshvempali/major#readme"
+  "homepage": "https://github.com/santhoshvempali/major#readme",
+  "devDependencies": {
+    "jest-cli": "^27.5.1"
+  }
 }
