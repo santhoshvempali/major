@@ -8,6 +8,14 @@ const session=require('express-session');
 const passport=require("passport");
 const passportLocal=require('./config/passport-local');
 const MongoStore=require('connect-mongo');
+const saasMiddleWare=require('node-sass-middleware')
+app.use(saasMiddleWare({
+    src: './assets/scss',
+    dest: "./assets/css",
+    debug: true,
+    outputStyle: "extended",
+    prefix: "/css"
+}))
 app.use(express.urlencoded());
 app.use(cookieParser());
 
