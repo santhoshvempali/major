@@ -14,6 +14,7 @@
   "author": "Santhosh",
   "license": "ISC",
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "connect-mongo": "^4.6.0",
     "cookie-parser": "^1.4.6",
     "ejs": "^2.6.1",
@@ -23,9 +24,10 @@
     "express-session": "^1.17.2",
     "jest": "^27.5.1",
     "mongodb": "^4.4.0",
-    "mongoose": "^5.4.6",
+    "mongoose": "^5.13.14",
     "node-sass-middleware": "^1.0.1",
     "nodemon": "^2.0.15",
+    "noty": "^3.2.0-beta-deprecated",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0"
   },
