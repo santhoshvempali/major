@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-wrap: nowrap;
+            background-color: #8ffcc9;
+            width: 400px;
+        }
+        .flex-container>div {
+            background-color: white;
+            width: 40px;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div style="flex-grow: 3">3</div>
+        <div>4</div>
+        <div>5</div>
+        <div style="flex-shrink: 2">6</div>  
+        <div>7</div>  
+    </div>
+</body>
+</html>

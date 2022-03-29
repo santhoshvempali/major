@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const environment=require("./environment")
 
-mongoose.connect('mongodb://localhost/codeial');
+mongoose.connect(`mongodb://localhost/${environment.database}`);
 
 const db = mongoose.connection;
 
@@ -13,3 +14,5 @@ db.once('open', function(){
 
 
 module.exports = db;
+
+
