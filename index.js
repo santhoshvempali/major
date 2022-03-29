@@ -7,13 +7,17 @@ const cookieParser=require('cookie-parser');
 const session=require('express-session');
 const passport=require("passport");
 const passportLocal=require('./config/passport-local');
+const passportJWT=require("./config/passport-jwt")
 const MongoStore=require('connect-mongo');
 const saasMiddleWare=require('node-sass-middleware')
 const flash=require("connect-flash");
 const customMware=require("./config/middleware")
+const pasportGoogle=require("./config/passport-google");
+const environment=require("./config/environment");
+const path=require("path");
 app.use(saasMiddleWare({
-    src: './assets/scss',
-    dest: "./assets/css",
+    src: path.join(__dirname,environment.asset_path,"/scss"),
+    dest: path.join(__dirname,environment.asset_path,"/css"),
     debug: true,
     outputStyle: "extended",
     prefix: "/css"
@@ -21,9 +25,10 @@ app.use(saasMiddleWare({
 app.use(express.urlencoded());
 app.use(cookieParser());
 
-app.use(express.static('./assets'));
+app.use(express.static(environment.asset_path));
 
 app.use(expressLayouts);
+app.use("/uploads",express.static(__dirname+"'/uploads"));
 // extract style and scripts from sub pages into the layout
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
@@ -36,7 +41,7 @@ app.set('views', './views');
 
 app.use(session({
     name: 'major',
-    secret: 'mysecret',
+    secret: environment.session_Cookie_Key,
     saveUninitialized: false,
     resave: false,
     cookie:{
