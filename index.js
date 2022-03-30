@@ -14,7 +14,9 @@ const flash=require("connect-flash");
 const customMware=require("./config/middleware")
 const pasportGoogle=require("./config/passport-google");
 const environment=require("./config/environment");
+const logger=require("morgan");
 const path=require("path");
+if(environment.name=="development"){
 app.use(saasMiddleWare({
     src: path.join(__dirname,environment.asset_path,"/scss"),
     dest: path.join(__dirname,environment.asset_path,"/css"),
@@ -22,11 +24,12 @@ app.use(saasMiddleWare({
     outputStyle: "extended",
     prefix: "/css"
 }))
+}
 app.use(express.urlencoded());
 app.use(cookieParser());
 
 app.use(express.static(environment.asset_path));
-
+app.use(logger(environment.morgan.mode,environment.morgan.options));
 app.use(expressLayouts);
 app.use("/uploads",express.static(__dirname+"'/uploads"));
 // extract style and scripts from sub pages into the layout
