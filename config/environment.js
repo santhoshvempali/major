@@ -27,7 +27,7 @@ const development={
     callbackURL: "http://localhost:8000/users/auth/google/callback",
     jwtSecret: "codeial",
     morgan:{
-        mode:"dev",
+        mode:"combined",
         options: {stream: accessLogStream}
     }
 }
