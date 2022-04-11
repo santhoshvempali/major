@@ -9,7 +9,4 @@
 # print(time)
 # print(newtime.hour)
 # print(newtime.minute)
-gifts=[90,40,100,3,1,500]
-
-gifts.sort()
-print(gifts)
+print(bin(ord("c")))
