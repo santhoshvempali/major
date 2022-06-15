@@ -27,7 +27,7 @@ ls demogarage
 ls demogarage/templates
 ```
 ### These are deafulat kubernetees yamls in templates
-![all text](https://github.com/santhoshvempali/major/blob/main/helmdeployed.png)
+![all text](https://github.com/santhoshvempali/major/blob/main/templates.png)
 
 we can create other kuberntees resource yamls as per our application needs
 
