@@ -26,7 +26,35 @@ ls demogarage
 
 ### configure image name and image policy
 
-![all text]()
+![all text](https://github.com/santhoshvempali/major/blob/main/deployValues.png)
+
+### There are three possible values for the pullPolicy:
+- IfNotPresent – Downloads a new version of the image if one does not exist in the cluster.
+- Always – Pulls the image on every restart or deployment.
+- Latest – Pulls the most up-to-date version available.
+
+## Step 3: Change Networking Service Type
+To change the networking service type, locate the service value and change service type and port values
+The avaliable service types are
+- ClusterIp
+- NodePort
+- Loadbalancer
+
+![all text](https://github.com/santhoshvempali/major/blob/main/svcValues.png)
+
+## Step 4 :Install the Helm Chart
+
+helm install "full name override" "chart name"/ --values "chart name"/values.yaml
+```bash
+  helm install demogarage-chart demogarage/ --values demogarage/values.yaml
+```
+
+
+
+
+
+
+
 
 
 
