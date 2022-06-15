@@ -22,6 +22,17 @@ ls demogarage
 - Chart file – Outline of the Helm chart structure.
 - values file – Formatting information for configuring the chart
 
+```bash
+#to see kubernetees objets yamls in templates
+ls demogarage/templates
+```
+### These are deafulat kubernetees yamls in templates
+![all text](https://github.com/santhoshvempali/major/blob/main/helmdeployed.png)
+
+we can create other kuberntees resource yamls as per our application needs
+
+
+
 ## Step 2: Configure Helm Chart values.yaml file 
 
 ### configure image name and image policy
@@ -48,6 +59,8 @@ helm install "full name override" "chart name"/ --values "chart name"/values.yam
 ```bash
   helm install demogarage-chart demogarage/ --values demogarage/values.yaml
 ```
+
+![all text](https://github.com/santhoshvempali/major/blob/main/helmdeployed.png)
 
 
 
